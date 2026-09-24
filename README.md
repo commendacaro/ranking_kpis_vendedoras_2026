@@ -1,207 +1,379 @@
-# ranking_kpis_vendedoras_2026
-Análisis de top 10 en estadísticas por mes de vendedoras.
-PROMPT — ANÁLISIS Y RANKING DE KPIs COMERCIALES
+PROMPT — CLASIFICACIÓN Y ANÁLISIS DE KPIs COMERCIALES
 
-Analizá la información proporcionada y realizá un ranking de desempeño comercial de vendedores.
+Analizá la información proporcionada y generá un ranking completo del desempeño de cada vendedor/a según los KPIs comerciales indicados.
 
-1. FILTRO INICIAL
+El objetivo es identificar claramente los mejores y los resultados que presentan oportunidades de mejora, utilizando una escala visual de colores y tomando como referencia el promedio de cada indicador.
 
-Antes de realizar cualquier ranking:
+---
 
-- Tomá únicamente las personas que tengan nombre y apellido identificables.
-- Excluí totales generales, promedios, equipos, locales, categorías, filas sin nombre completo y cualquier registro que no corresponda a una persona.
-- Considerá únicamente a las personas que hayan alcanzado más de $1.500.000 de venta.
-- Si una persona tiene exactamente $1.500.000, no incluirla.
-- No completes ni inventes datos faltantes.
+1. FILTRO DE PERSONAS
+
+Antes de realizar cualquier cálculo o ranking, aplicar TODOS los siguientes filtros:
+
+Antigüedad
+
+- Incluir únicamente personas que tengan 3 meses o más de antigüedad a la fecha en que se realiza el análisis.
+- Calcular la antigüedad tomando como referencia la fecha de ingreso y la fecha en que se realiza el análisis.
+- Si tiene menos de 3 meses, excluirla completamente del análisis.
+
+Venta mínima
+
+- Incluir únicamente personas cuya venta individual sea superior a $3.000.000.
+- Si tiene exactamente $3.000.000, excluirla.
+- Si tiene menos de $3.000.000, excluirla.
+
+Identificación
+
+- Incluir únicamente personas que tengan nombre y apellido.
+- Excluir:
+  - totales generales;
+  - promedios;
+  - equipos;
+  - locales;
+  - categorías;
+  - filas sin nombre completo;
+  - cualquier registro que no corresponda a una persona.
+
+IMPORTANTE: Estos filtros deben aplicarse ANTES de calcular los promedios y antes de ordenar los resultados.
+
+---
 
 2. KPIs A ANALIZAR
 
-Para las personas que cumplen el filtro, analizá estos 4 indicadores:
+Analizar únicamente estas cuatro estadísticas:
 
 1. Venta Promedio (TP)
 2. Segundo Producto (%)
 3. Tercer Producto (%)
 4. Incremental en Cambios (%)
 
-3. TOP 10 MEJORES KPIs
+---
 
-Generá un Top 10 de mejores resultados para cada KPI, ordenando de mayor a menor.
+3. RANKING COMPLETO
 
-Presentá:
+Para cada KPI, ordenar a todas las personas que cumplen los filtros desde el resultado más alto hasta el resultado más bajo.
 
-Puesto| Vendedor/a| Venta| KPI| Resultado
-1| Nombre Apellido| $X| Venta Promedio| X
-2| Nombre Apellido| $X| Venta Promedio| X
+NO realizar Top 10.
 
-Realizá el mismo ranking para:
+Debe aparecer el listado completo de personas habilitadas para el análisis.
 
-- Venta Promedio
-- Segundo Producto
-- Tercer Producto
-- Incremental en Cambios
+IMPORTANTE
 
-4. TOP 10 KPIs MENOS LOGRADOS
+En el ranking NO mostrar la venta total individual de cada persona.
 
-Generá también un Top 10 de resultados más bajos para cada KPI, ordenando de menor a mayor.
+La venta se utiliza únicamente como criterio de filtro para determinar quién ingresa al análisis.
 
-IMPORTANTE:
+En el ranking mostrar únicamente:
 
-- No interpretes automáticamente un resultado bajo como falta de compromiso.
-- Presentalo como una oportunidad de mejora.
-- En Incremental en Cambios, respetá exactamente la forma en que esté expresado el indicador en la información proporcionada.
+Puesto| Vendedor/a| Local| Resultado KPI
+1| Nombre Apellido| Local| XX%
+2| Nombre Apellido| Local| XX%
+3| Nombre Apellido| Local| XX%
 
-5. ANÁLISIS GENERAL
+Para Venta Promedio, mostrar el valor correspondiente al KPI.
 
-Después de los rankings, identificá:
+Para los demás indicadores, mostrar el porcentaje correspondiente.
 
-- Quiénes aparecen reiteradamente entre los mejores resultados.
-- Quiénes aparecen reiteradamente entre los resultados más bajos.
-- Qué KPI presenta mayores oportunidades de mejora.
-- Qué KPI muestra mejores resultados generales.
-- Si existen vendedores que tengan buenos resultados en un KPI pero bajos en otro.
+---
 
-No inventes causas. Las causas deben presentarse únicamente como posibles hipótesis comerciales, claramente diferenciadas de los datos.
+4. LOCAL
 
-6. CÓMO REVERTIR LOS RESULTADOS MÁS BAJOS
+Incluir obligatoriamente el local al que pertenece cada persona.
 
-Para cada KPI, desarrollá acciones comerciales concretas.
+La información debe quedar:
 
-Venta Promedio baja
+Nombre y Apellido — Local — Resultado del KPI
 
-Indicar acciones para:
+No reemplazar el nombre del local por códigos si la información original permite identificarlo.
 
-- aumentar unidades por ticket;
-- incorporar productos complementarios;
-- ofrecer alternativas de mayor valor;
-- trabajar venta por necesidad y no solamente por producto solicitado;
-- detectar oportunidades de venta adicional.
+---
 
-Segundo Producto bajo
+5. PROMEDIO DE CADA KPI
 
-Indicar acciones para:
+Calcular el promedio de cada una de las cuatro estadísticas, utilizando únicamente las personas que:
 
-- no cerrar la venta con un único producto;
-- ofrecer siempre una segunda opción complementaria;
-- relacionar el producto principal con otra categoría;
-- utilizar preguntas abiertas para detectar necesidades;
-- incorporar accesorios, billeteras, calzado, camperas, etc., cuando corresponda.
+- tengan 3 meses o más de antigüedad;
+- superen los $3.000.000 de venta;
+- tengan nombre y apellido.
 
-Tercer Producto bajo
+Mostrar el promedio correspondiente al comienzo de cada ranking.
 
-Indicar acciones para:
+Ejemplo:
 
-- profundizar la venta después del segundo producto;
-- buscar una tercera incorporación con sentido;
-- utilizar la venta cruzada entre categorías;
-- presentar combinaciones de productos;
-- trabajar el cierre completo de la compra.
+VENTA PROMEDIO
 
-Incremental en Cambios bajo
+Promedio del grupo analizado: $XX
 
-Indicar acciones para:
+Luego presentar el ranking completo.
 
-- detectar oportunidades durante un cambio;
-- transformar el cambio en una nueva oportunidad comercial;
-- ofrecer alternativas adicionales;
-- recuperar el valor de la operación;
-- evitar que el cambio termine solamente en una reposición.
+---
 
-7. MAIL MOTIVACIONAL
+6. SISTEMA DE COLORES
 
-Luego del análisis, redactá un mail para el equipo.
+Utilizar una escala de colores tipo semáforo/degradé para mostrar visualmente el desempeño.
 
-El mail debe:
+Para cada KPI:
 
-- ser motivador y comercial;
-- reconocer los buenos resultados;
-- destacar el esfuerzo de quienes lideran los indicadores;
-- plantear los resultados más bajos como oportunidades de mejora;
-- explicar que el objetivo no es comparar por comparar, sino detectar dónde podemos mejorar;
-- incentivar el seguimiento diario de los KPIs;
-- transmitir que cada indicador representa una oportunidad concreta de venta.
+- Los resultados más altos deben representarse con tonos verdes.
+- Los resultados más bajos deben representarse con tonos rojos.
+- El promedio del KPI debe funcionar como punto de referencia central.
+- Los valores superiores al promedio deben avanzar hacia el verde.
+- Los valores inferiores al promedio deben avanzar hacia el rojo.
 
-El tono debe ser profesional, cercano, positivo y directo, evitando un tono de reto o sanción.
+Intensidad del color
 
-8. CIERRE DEL ANÁLISIS
+Utilizar un degradé:
 
-Finalizá con una tabla resumen:
+🟢 Verde oscuro: resultados más destacados.
 
-KPI| Qué mide| Qué queremos lograr| Cómo mejorarlo
-Venta Promedio| Valor promedio del ticket| Aumentar valor por compra| Venta complementaria
-Segundo Producto| Clientes que agregan un segundo producto| Aumentar unidades por ticket| Venta cruzada
-Tercer Producto| Clientes que incorporan un tercer producto| Profundizar la compra| Completar la propuesta
-Incremental en Cambios| Venta adicional generada en cambios| Recuperar oportunidades| Venta durante el cambio
+🟢 Verde medio: resultados altos.
 
-IMPORTANTE: todos los rankings deben calcularse solamente sobre las personas que superen $1.500.000 de venta y tengan nombre y apellido.
+🟡 Amarillo: resultados cercanos al promedio.
 
-9. RECONOCIMIENTO Y PLAN DE ACOMPAÑAMIENTO
+🟠 Naranja: resultados por debajo del promedio.
 
-A partir de los resultados obtenidos, generá dos listados:
+🔴 Rojo fuerte: resultados más bajos.
 
-A. TOP 10 — PERSONAS A RECONOCER
+El color debe reflejar la distancia respecto del promedio y no solamente si el resultado está arriba o abajo.
 
-Seleccioná las 10 personas que presenten los desempeños más destacados considerando los 4 KPIs analizados.
+A mayor diferencia positiva respecto del promedio → verde más intenso.
 
-Para cada persona indicar:
+A mayor diferencia negativa respecto del promedio → rojo más intenso.
 
-Puesto| Vendedor/a| Venta| Fortaleza principal| Resultado
-1| Nombre Apellido| $X| Segundo Producto| X%
+Evitar una coloración arbitraria. El criterio debe aplicarse de manera consistente dentro de cada KPI.
 
-IMPORTANTE:
+---
 
-- No utilizar un puntaje inventado.
-- Explicar por qué aparece en este listado utilizando únicamente sus resultados reales.
-- Si una persona se destaca en más de un KPI, indicarlo.
-- El reconocimiento debe enfocarse en qué comportamiento comercial puede ser replicado por el resto del equipo.
+7. IMPORTANTE SOBRE LOS COLORES
 
-B. TOP 10 — PERSONAS PARA ACOMPAÑAR
+El color debe calcularse por separado para cada estadística.
 
-Identificá las 10 personas que presentan mayores oportunidades de mejora dentro de los 4 KPIs.
+No comparar directamente los valores de distintos KPIs entre sí.
+
+Por ejemplo:
+
+- El promedio de Venta Promedio se utiliza únicamente para colorear Venta Promedio.
+- El promedio de Segundo Producto se utiliza únicamente para colorear Segundo Producto.
+- El promedio de Tercer Producto se utiliza únicamente para colorear Tercer Producto.
+- El promedio de Incremental en Cambios se utiliza únicamente para colorear Incremental en Cambios.
+
+---
+
+8. PRESENTACIÓN FINAL DE LOS CUATRO RANKINGS
+
+Generar cuatro rankings independientes:
+
+1. VENTA PROMEDIO
+
+Ordenar de mayor a menor.
+
+Mostrar:
+
+- puesto;
+- nombre y apellido;
+- local;
+- resultado;
+- color según distancia al promedio.
+
+2. SEGUNDO PRODUCTO
+
+Ordenar de mayor a menor.
+
+Mostrar:
+
+- puesto;
+- nombre y apellido;
+- local;
+- resultado;
+- color según distancia al promedio.
+
+3. TERCER PRODUCTO
+
+Ordenar de mayor a menor.
+
+Mostrar:
+
+- puesto;
+- nombre y apellido;
+- local;
+- resultado;
+- color según distancia al promedio.
+
+4. INCREMENTAL EN CAMBIOS
+
+Ordenar de mayor a menor.
+
+Mostrar:
+
+- puesto;
+- nombre y apellido;
+- local;
+- resultado;
+- color según distancia al promedio.
+
+---
+
+9. ANÁLISIS GENERAL
+
+Una vez realizados los cuatro rankings, identificar:
+
+- qué personas aparecen con resultados destacados en diferentes KPIs;
+- qué personas presentan oportunidades de mejora en más de un indicador;
+- qué KPI tiene el promedio más alto o más bajo dentro de su propia escala;
+- qué indicadores muestran mayor dispersión entre las personas;
+- qué oportunidades comerciales aparecen con mayor frecuencia.
+
+No inventar causas.
+
+Si se plantean posibles causas, identificarlas expresamente como hipótesis o posibilidades, no como hechos.
+
+---
+
+10. RECONOCIMIENTO
+
+Generar un apartado denominado:
+
+PERSONAS DESTACADAS
+
+Identificar a las personas que presentan resultados especialmente positivos en uno o varios KPIs.
 
 Para cada una indicar:
 
-Puesto| Vendedor/a| Venta| KPI a trabajar| Resultado| Acción concreta
-1| Nombre Apellido| $X| 2do Producto| X%| Trabajar venta complementaria
+Nombre y Apellido — Local
+KPI destacado: XX
+Resultado: XX
+Comentario: explicar brevemente qué indicador presenta como fortaleza.
 
-IMPORTANTE:
+No generar un ranking general de personas ni asignar puntajes inventados.
 
-- No utilizar expresiones como "peor vendedor", "bajo desempeño" o similares.
-- Hablar de oportunidad de mejora.
-- No atribuir causas que no surjan de los datos.
-- La acción debe ser concreta, sencilla y aplicable en el salón.
+El objetivo es reconocer comportamientos comerciales concretos que puedan ser compartidos con el equipo.
 
-10. PLAN INDIVIDUAL DE MEJORA
+---
 
-Para cada una de las 10 personas a acompañar, generar una recomendación de máximo 2 líneas:
+11. OPORTUNIDADES DE MEJORA
 
-Nombre Apellido
-KPI a trabajar: Segundo Producto — X%
-Acción: Antes de cerrar cada venta, ofrecer al menos una alternativa complementaria relacionada con el producto elegido.
+Generar un apartado denominado:
 
-Las recomendaciones deben variar según el KPI y no repetir siempre la misma acción.
+OPORTUNIDADES DE MEJORA
 
-11. MENSAJE PARA EL EQUIPO
+Identificar las personas que presentan resultados por debajo del promedio en alguno de los KPIs.
 
-Después del mail motivacional, generar también un mensaje breve para WhatsApp, de máximo 6 líneas.
+Para cada caso indicar:
+
+Nombre y Apellido — Local
+KPI a trabajar: XX
+Resultado: XX
+Promedio: XX
+Acción recomendada: indicar una acción comercial concreta para mejorar ese indicador.
+
+---
+
+12. CÓMO REVERTIR CADA ESTADÍSTICA
+
+Desarrollar acciones concretas para mejorar cada KPI.
+
+VENTA PROMEDIO
+
+Sugerir acciones como:
+
+- aumentar unidades por ticket;
+- detectar necesidades adicionales;
+- ofrecer productos complementarios;
+- presentar alternativas de mayor valor cuando sea apropiado;
+- trabajar la venta completa y no solamente el producto solicitado.
+
+SEGUNDO PRODUCTO
+
+Trabajar:
+
+- ofrecer siempre una segunda alternativa;
+- relacionar el producto principal con otra categoría;
+- incorporar accesorios o complementos;
+- hacer preguntas para detectar necesidades adicionales;
+- evitar cerrar la venta después del primer producto.
+
+TERCER PRODUCTO
+
+Trabajar:
+
+- profundizar la venta luego del segundo producto;
+- buscar una tercera incorporación con sentido;
+- combinar diferentes categorías;
+- completar la propuesta de compra;
+- aprovechar oportunidades de venta cruzada.
+
+INCREMENTAL EN CAMBIOS
+
+Trabajar:
+
+- convertir el momento del cambio en una nueva oportunidad comercial;
+- detectar necesidades adicionales;
+- ofrecer alternativas;
+- recuperar parte del valor de la operación;
+- generar una venta adicional cuando el cambio lo permita.
+
+---
+
+13. MAIL MOTIVACIONAL
+
+Luego del análisis, redactar un mail dirigido al equipo.
+
+El mail debe ser:
+
+- motivador;
+- profesional;
+- cercano;
+- comercial;
+- positivo;
+- directo.
+
+Debe destacar que:
+
+Los KPIs no son solamente números: son herramientas para detectar oportunidades de venta.
+
+Reconocer los buenos resultados y plantear los indicadores por debajo del promedio como oportunidades concretas de mejora.
+
+Evitar un tono de reto, sanción o crítica personal.
+
+El objetivo es generar motivación, seguimiento y mejora continua.
+
+---
+
+14. MENSAJE BREVE PARA WHATSAPP
+
+Finalmente, generar un mensaje de WhatsApp de máximo 6 líneas para compartir con el equipo.
 
 Debe transmitir:
 
 - reconocimiento;
-- foco en los KPIs;
-- importancia del seguimiento diario;
+- foco comercial;
+- importancia de mirar los KPIs;
+- seguimiento diario;
 - oportunidad de mejora;
-- actitud comercial.
+- motivación para seguir creciendo.
 
-Debe ser motivador, directo y fácil de leer desde el celular.
+---
 
-12. REGLA FINAL
+15. CONTROL FINAL OBLIGATORIO
 
-Antes de presentar cualquier conclusión, verificar nuevamente que:
+Antes de entregar el resultado, verificar:
 
-✓ Solo se incluyeron personas con nombre y apellido.
-✓ Todas superan $1.500.000 de venta.
-✓ Los rankings están correctamente ordenados.
+✓ Se incluyeron únicamente personas con nombre y apellido.
+✓ Todas tienen 3 meses o más de antigüedad a la fecha del análisis.
+✓ Todas tienen más de $3.000.000 de venta.
+✓ La venta total NO aparece en los rankings.
+✓ La venta se utilizó únicamente como filtro.
+✓ Se incluyó el local de cada persona.
+✓ Se analizaron los cuatro KPIs solicitados.
+✓ Cada KPI está ordenado de mayor a menor.
+✓ No se realizó Top 10.
+✓ Se calculó un promedio independiente para cada KPI.
+✓ Los colores se determinaron tomando como referencia el promedio de cada KPI.
+✓ Los mejores resultados tienen verde más intenso.
+✓ Los peores resultados tienen rojo más intenso.
+✓ Los resultados cercanos al promedio tienen colores intermedios.
 ✓ No se inventaron datos.
-✓ No se mezclaron personas con locales, equipos o totales.
-✓ Los porcentajes se mantienen exactamente como figuran en la información original.
-✓ Las recomendaciones están relacionadas con el KPI que necesita mejorar.
+✓ No se atribuyeron causas que no surjan de la información.
+✓ Las recomendaciones de mejora corresponden al KPI que necesita ser trabajado.
+
+
